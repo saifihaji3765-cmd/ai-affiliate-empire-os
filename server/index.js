@@ -7,12 +7,13 @@ import authRoutes from "./routes/auth.js";
 dotenv.config();
 import offerRoutes from "./routes/offers.js";
 const app = express();
+import supabaseAuthRoutes from "./routes/supabaseAuth.js";
 import aiRoutes from "./routes/ai.js";
 app.use(cors());
 app.use(helmet());
 app.use(morgan("dev"));
 app.use(express.json());
-
+app.use("/api/supabase-auth", supabaseAuthRoutes);
 const PORT = process.env.PORT || 5000;
 
 app.get("/", (req, res) => {
