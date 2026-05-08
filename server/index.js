@@ -3,7 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import helmet from "helmet";
 import morgan from "morgan";
-
+import authRoutes from "./routes/auth.js";
 dotenv.config();
 
 const app = express();
