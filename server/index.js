@@ -7,7 +7,7 @@ import authRoutes from "./routes/auth.js";
 dotenv.config();
 import offerRoutes from "./routes/offers.js";
 const app = express();
-
+import aiRoutes from "./routes/ai.js";
 app.use(cors());
 app.use(helmet());
 app.use(morgan("dev"));
@@ -25,3 +25,4 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });app.use("/api/offers", offerRoutes);
+app.use("/api/ai", aiRoutes);
