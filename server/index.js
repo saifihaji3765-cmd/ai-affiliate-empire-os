@@ -5,7 +5,7 @@ import helmet from "helmet";
 import morgan from "morgan";
 import authRoutes from "./routes/auth.js";
 dotenv.config();
-
+import offerRoutes from "./routes/offers.js";
 const app = express();
 
 app.use(cors());
@@ -24,4 +24,4 @@ app.get("/", (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
-});
+});app.use("/api/offers", offerRoutes);
